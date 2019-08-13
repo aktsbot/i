@@ -18,5 +18,7 @@
     "url": "https://github.com/aktsbot/i/issues"
   },
   "homepage": "https://github.com/aktsbot/i#readme",
-  "dependencies": {}
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }

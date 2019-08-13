@@ -1,32 +1,21 @@
-// https://blog.risingstack.com/your-first-node-js-http-server/
+const express = require('express');
+const PORT = process.env.PORT || 3000;
 
-const http = require('http');
+const app = express();
 
-const port = process.env.PORT || 3000;
-
-const requestHandler = (req, res) => {
-  console.log(req.url);
-  const realIp = req.headers["x-real-ip"];
-  const ip = req.headers['x-forwarded-for'] ||
-    req.connection.remoteAddress ||
-    req.socket.remoteAddress ||
-    (req.connection.socket ? req.connection.socket.remoteAddress : null);
-  const ips = `${realIp}
-${ip}
-  `
-  res.end(ips);
-}
-
-const server = http.createServer(requestHandler)
-
-server.listen(port, (err) => {
-  if (err) {
-    console.log('Something bad happened', err);
-    return;
-  }
-
-  console.log(`server is listening on ${port}`);
+app.get('/', (req, res) => {
+  console.log('-------')
+  console.log(req.ip)
+  console.log(req.ips)
+  console.log(req.hostname)
+  console.log('-------')
+  return res.send('hooah!')
 });
 
-
+app.listen(PORT, (err) => {
+  if (err) {
+    console.log(err)
+  }
+  console.log(`server running on ${PORT}`)
+})
 
