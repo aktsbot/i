@@ -18,7 +18,5 @@
     "url": "https://github.com/aktsbot/i/issues"
   },
   "homepage": "https://github.com/aktsbot/i#readme",
-  "dependencies": {
-    "geoip-lite": "^1.3.7"
-  }
+  "dependencies": {}
 }
