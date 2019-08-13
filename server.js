@@ -6,12 +6,9 @@ const app = express();
 app.enable('trust proxy');
 
 app.get('/', (req, res) => {
-  console.log('-------')
-  console.log(req.ip)
-  console.log(req.ips)
-  console.log(req.hostname)
-  console.log('-------')
-  return res.send('hooah!')
+  const ip = req.ips.length > 0 ? req.ips[req.ips.length - 1] : req.ip;
+  res.set('Content-Type', 'text/plain')
+  return res.send(ip)
 });
 
 app.listen(PORT, (err) => {
