@@ -1,0 +1,24 @@
+{
+  "name": "i",
+  "version": "1.0.0",
+  "description": "I got tired of visiting https://whatismyipaddress.com/ and other sites that bombard me with ads when I just want my public IP.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aktsbot/i.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aktsbot/i/issues"
+  },
+  "homepage": "https://github.com/aktsbot/i#readme",
+  "dependencies": {
+    "geoip-lite": "^1.3.7"
+  }
+}
